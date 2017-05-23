@@ -66,6 +66,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("PickUp"))
+        {
+            other.gameObject.SetActive(false);
 
+            Debug.Log("pickup");
+            Spawner.Instance.isActive = false;
+            Spawner.Instance.counter--;
+        }
+
+    }
 
 }
