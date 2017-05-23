@@ -17,16 +17,15 @@ public class PlayerController : MonoBehaviour
     public int fingerOffset = 100;             //Distance between ball and user's input (Mouse or Touch)
                                                //this is required to let player see the ball above the finger
 
-    //Private internal variables
-    private float xVelocity = 0.0f;
-    private float zVelocity = 0.0f;
-    private float yVelocity = 0.0f;
-    private Vector3 screenToWorldVector;
+    public float xVelocity = 0.0f;
+    public float zVelocity = 0.0f;
+    public float yVelocity = 0.0f;
+    public Vector3 screenToWorldVector;
 
 
     void Start()
     {
-        //Set Y offset for ball
+
         transform.position = new Vector3(transform.position.x, 0.5f, transform.position.z);
     }
 
@@ -55,9 +54,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    ///***********************************************************************
-    /// Control ball's position with touch position parameters
-    ///***********************************************************************
+
     void touchControl()
     {
         if (Input.touchCount > 0 || Application.isEditor || Application.isWebPlayer)
